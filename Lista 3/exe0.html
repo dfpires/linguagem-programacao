@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Exercício exemplo </title>
+        <script>
+            function calcular(){
+               let contador = 0 // conta toda vez que o usuário informa um número
+               let soma = 0 // soma os elementos informados
+               // recebe (s para sim e n para não)
+               let resp = 's'
+               while (resp != 'n'){ // vai executar enquanto resp != n
+                   let numero = Number(prompt("Informe um numero")) // informa um número
+                    soma = soma + numero // soma o elemento
+                    contador++ // incrementa o contador
+                    // converte para minúscula
+                    resp = prompt("Deseja continuar? Informe s para sim e n pra não").toLowerCase()
+               }
+               // a qtde de números informados é contador
+               document.getElementById("resultado").innerHTML = `Média = ${soma/contador}`
+            }
+        </script>
+    </head>
+    <body>
+        <h2> Exercício exemplo </h2>
+        <h2> Clique no botão para iniciar </h2>
+        <h3> <button type="button" onClick="calcular()"> Calcular </button> </h3>
+        <h3 id="resultado"> </h3>
+    </body>
+</html>

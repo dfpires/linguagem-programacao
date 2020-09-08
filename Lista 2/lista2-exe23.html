@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Lista 2 - Exercício 23 </title>
+        <script>
+            function calcular(){
+                // entrada de dados
+                let codigo = Number(document.getElementById('codigo').value)
+                let qtde = Number(document.getElementById('qtde').value)
+                // preço unitário
+                let precoUnitario
+                if ((codigo >= 1) && (codigo <= 10)){
+                    precoUnitario = 10
+                }
+                else if ((codigo >= 11) && (codigo <= 20)){
+                    precoUnitario = 15
+                }
+                else if ((codigo >= 21) && (codigo <= 30)){
+                    precoUnitario = 20
+                }
+                else if ((codigo >= 31) && (codigo <= 40)){
+                    precoUnitario = 30
+                }
+                else {
+                    precoUnitario = 0 // default
+                }
+                // preço total
+                let precoTotal = precoUnitario * qtde
+                // desconto
+                let desconto
+                if (precoTotal < 250) {
+                    desconto = (precoTotal * 5) / 100
+                }
+                else if (precoTotal <= 500){
+                    desconto = (precoTotal * 10) / 100
+                }
+                else {
+                    desconto = (precoTotal * 15) / 100
+                }
+                // preço final
+                let precoFinal = precoTotal - desconto
+                // saída
+                document.getElementById('resultado').innerHTML = 
+`Preço unitário ${precoUnitario} <br/> Preço Total: ${precoTotal} <br/> Desconto ${desconto} <br/> Preço Final ${precoFinal}`
+            }
+        </script>
+    </head>
+    <body>
+        <h2> Lista 2 - Exercício 23 </h2>
+        <h3>
+            Informe o código do produto <input type="number" id="codigo">
+        </h3>
+        <h3>
+            Informe qtde comprado do produto <input type="number" id="qtde">
+        </h3>
+        <h3>
+            <button type="button" onClick="calcular()"> Calcular </button>
+        </h3>
+        <h3 id="resultado">
+
+        </h3>
+    </body>
+</html>

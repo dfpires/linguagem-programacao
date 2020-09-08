@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title> Lista 2 - Exercício 5 </title>
+        <script>
+            function calcular(){
+                // recupera os dados do usuário
+                var n1 = Number(document.getElementById("n1").value)
+                var n2 = Number(document.getElementById("n2").value)
+                var opcao = Number(document.getElementById("opcao").value)
+                // vamos calcular
+                var resultado // guarda o resultado da operação
+                switch(opcao){
+                    case 1: resultado = (n1 + n2) / 2
+                            break
+                    case 2: if (n1 > n2){
+                                resultado = n1 - n2
+                            }
+                            else {
+                                resultado = n2 - n1
+                            }
+                            break
+                    case 3: resultado = n1 * n2
+                            break
+                    case 4: if (n2 != 0){
+                                resultado = n1 / n2
+                            }
+                            else {
+                                resultado = "Não é possível divisão por zero"
+                            }
+                            break 
+                    default: // caso contrário, não entrou em nenhuma opção acima
+                            resultado = `Opção inválida`
+                }
+                // mostra para usuário
+                document.getElementById("resultado").innerHTML = resultado
+            }
+        </script>
+    </head>
+    <body>
+        <h2> Lista 2 - Exercício 5 </h2>
+        <h3>
+            Informe um número <input type="number" id="n1"/>
+        </h3>
+        <h3>
+            Informe outro número <input type="number" id="n2"/>
+        </h3>
+        <h3>
+            Escolha uma opção 1. Média 2. Subtração 3. Produto 4. Divisão <input type="number" id="opcao"/>
+        </h3>
+        <h3>
+            <button type="button" onClick="calcular()"> Calcular </button>
+        </h3>
+        <h3 id="resultado">
+
+        </h3>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8"/> <!-- navegador identifica acento e cecedilha -->
+        <title> Lista 1 - Exercício 6 </title>
+        <script>
+            function calcular(){
+                // recupera os dados do usuário
+                // se os dados forem número, vamos converter usando a função Number()
+                var salarioFixo = Number(document.getElementById("salarioFixo").value)
+                var vendas = Number(document.getElementById("vendas").value)
+                // calcula comissão
+                var comissao = (vendas * 4) / 100
+                // calculsa salário final
+                var salarioFinal = salarioFixo + comissao
+                // devolve resultado para usuário
+                document.getElementById("r1").innerHTML = `Comissão: R$ ${comissao.toFixed(2)}`
+                document.getElementById("r2").innerHTML = `Salário final R$ ${salarioFinal.toFixed(2)}`
+            }
+        </script>
+    </head>
+    <body>
+        <h2> Lista 1 - Exercício 6 </h2>
+        <h3>
+            Salário fixo <input type="number" id="salarioFixo"/>
+        </h3>
+        <h3>
+            Valor das vendas <input type="number" id="vendas"/>
+        </h3>
+        <h3>
+            <button type="button" onClick="calcular()"> Calcular </button>
+        </h3>
+        <h3>
+           <p id="r1">
+
+           </p>     
+           <p id="r2">
+
+           </p> 
+        </h3>
+    </body>
+</html>

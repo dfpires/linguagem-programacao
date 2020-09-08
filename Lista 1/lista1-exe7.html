@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista 1 - Exercício 7</title>
+    <script>
+        function calcular(){
+            // recebe o dado do usuário
+            var peso = Number(document.getElementById("peso").value)
+            // calcula resultado
+            var emagrece = peso - (20*peso)/100
+            var engorda = peso + (15*peso)/100
+            // mostra o resultado
+            document.getElementById("emagrece").innerHTML = `Novo valor ${emagrece}`
+            document.getElementById("engorda").innerHTML = `Novo valor ${engorda}`
+        }
+    </script>
+</head>
+<body>
+    <h2> Lista 1 - Exercício 7 </h2>
+    <h3>
+        Peso <input type="number" id="peso"/>
+    </h3>
+    <h3>
+        <button type="button" onclick="calcular()"> Calcular </button>
+    </h3>
+    <h3>
+        <p id="emagrece">
+
+        </p>
+        <p id="engorda">
+
+        </p>
+    </h3>
+</body>
+</html>

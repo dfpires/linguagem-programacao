@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Lista 2 - Exercício 22 </title>
+        <style type="text/css"> /* Código CSS Cascade Style Sheet */
+            /* quando definimos um estilo para um elemento, todos os seus filhos são afetados */
+            body {
+                text-align: center;
+            }
+            h3 {
+                color: blue
+            }
+            h2 {
+                color: red
+            }
+        </style>
+        <script> /* Código JS */
+            function calcular(){
+                // entrada de dados
+                let idade = Number(document.getElementById('idade').value)
+                let peso = Number(document.getElementById('peso').value)
+                let resultado
+                if (idade < 20){
+                    if (peso < 60){
+                        resultado = 9    
+                    }
+                    else if (peso <= 90){
+                        resultado = 8
+                    }
+                    else {
+                        resultado = 7
+                    }
+                }
+                else if (idade <= 50){
+                        if (peso  < 60){
+                            resultado = 6
+                        }
+                        else if (peso <= 90){
+                            resultado = 5
+                        }
+                        else {
+                            resultado = 4
+                        }
+                    } // idade > 50
+                    else if (peso < 60){
+                        resultado = 3
+                    }
+                    else if (peso <= 90 ){
+                        resultado = 2
+                    }
+                    else {
+                        resultado = 1
+                    }
+                // saída
+                document.getElementById('resultado').innerHTML = resultado
+            }
+        </script>
+    </head>
+    <body>
+        <h2> Lista 2 - Exercício 22 </h3>
+        <h3>
+            Informe idade <input type="number" id="idade">
+        </h3>
+        <h3>
+            Informe peso <input type="number" id="peso">
+        </h3>
+        <h3> 
+            <button type="button" onClick="calcular()"> Calcular </button>
+        </h3>
+        <h3 id="resultado">
+
+        </h3>
+    </body>
+</html>
